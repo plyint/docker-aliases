@@ -7,7 +7,7 @@ The main idea is to run a comand using its docker image.
 $ docker run --rm -v $(pwd):/directory -w /directory node node
 ```
 
-By aliasing this command, then we can provide the same experience as if the command was running locally...
+By aliasing this command, we can provide the same experience as if the command was running locally...
 ```
 $ alias node='docker run --rm -v $(pwd):/directory -w /directory node node'
 $ node --version
@@ -26,9 +26,9 @@ Status: Downloaded newer image for node:latest
 v12.2.0
 ```
 
-You'll notice that in this case we didn't have the image downloaded intially.  Since, the alias uses "docker run" then we also get the benefit of automatically downloading the image the first time the command is run if the image is not present.
+You'll notice that in this case we didn't have the image downloaded intially.  Since, the alias uses "docker run", then we also get the benefit of automatically downloading the image the first time the command is run if the image doesn't exist.
 
-If the image is present or the command is run subsequent times then your local version of the image will be used.
+If the image exists or the command is run subsequent times, then your local version of the image will be used.
 ```
 $ node --version
 v12.2.0
